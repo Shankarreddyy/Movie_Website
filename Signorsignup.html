@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width-device-width, intial-scale=1.0">
+	<title>Sign in& Sign UP Form </title>
+	<link rel="stylesheet" type="text/css" href="Sign.css">
+</head>
+<body>
+	<section>
+		<div class="container">
+			<div class="Signinbx in">
+				<div class="imgbx"><img src="fav icon.jpg" height="500px" width="400px"></div>
+			    <div class="formbx">
+			    	<form action="Index.html" method="post" onsubmit="return (validate())">
+					<h2>Sign In</h2>
+					<input type="text" name="" placeholder="UserName" id="1">
+					<input type="password" name="" placeholder="Password" id="2">
+					<input type="submit" name="" value="Login">
+					<p class="Signup">Don't have an account ?<a href="#" onclick="toggleForm();">Sign Up</a></p>
+				</form>
+			</div>
+		</div>
+		<div class="Signinbx up">
+			    <div class="formbx">
+			    	<form action="Index.html">
+					<h2>Crete an Account</h2>
+					<input type="text" name="" placeholder="UserName">
+					<input type="email" name="" placeholder="Email Id">
+					<input type="password" name="" placeholder="Password">
+					<input type="password" name="" placeholder="Confirm Password">
+					<input type="submit" value="Sign Up">
+					<p class="Signup">You have an account<a href="#" onclick="toggleForm();">Sign In</a></p>
+				</form>
+			</div>
+			<div class="imgbx"><img src="fav icon.jpg" height="500px" width="400px"></div>
+		</div>
+	</div>
+</section>
+<script type="text/javascript">
+	function toggleForm(){
+		var container = document.querySelector('.container');
+		container.classList.toggle('active')
+
+	}
+	
+	function validate()
+{	
+x=document.getElementById("1").value;
+atpos=x.indexOf("@");
+dotpos=x.indexOf(".");
+dotposLast=x.lastIndexOf(".");
+if(x=""||atpos==0||dotpos<=atpos+3||dotposLast+2>=x.length)
+	{
+	alert("Enter valid E-mail ID !");
+	document.getElementById("1").focus();
+	return false;
+	}
+	x=document.getElementById('2').value;
+	
+		if(x==""||x.length!=6)
+			{
+				
+		alert("Please Enter a correct type of password");
+		document.getElementById('2').focus();
+		return false;
+	}
+		return(true);
+}
+	
+</script>
+</body>
+</html>
